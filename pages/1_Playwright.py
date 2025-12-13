@@ -8,26 +8,25 @@ st.markdown("### From Beginner to Industry Expert")
 
 # Introduction Section with Architecture
 st.markdown("---")
-col1, col2 = st.columns([1, 2])
-with col1:
+# Introduction Section with Architecture
+st.markdown("---")
+# Side-by-Side Architecture Layout
+c1, c2 = st.columns([1, 1])
+with c1:
     st.markdown("#### 🏛️ The Architecture of Speed")
     st.info("""
-    **The WebSocket Revolution**
+    **The "Direct Line" Analogy**
     
-    Imagine trying to have a conversation with someone in another room (Selenium/WebDriver) where you have to send a letter for every sentence and wait for a reply letter. That's HTTP polling.
+    Imagine Selenium is playing a game of "Telephone". It tells the WebDriver, which tells the Browser. Messages get lost or delayed.
     
-    **Playwright** is like being in the *same room* talking over a direct phone line (WebSocket). 
+    **Playwright** is like a direct brain-interface. It speaks to the browser's engine directly via WebSocket. No translation layers.
     
-    It communicates directly with the browser's engine (Chromium, WebKit, Firefox) via the **DevTools Protocol**, allowing for:
-    - ⚡ **Bi-directional communication** (Events fire instantly)
-    - 🚀 **Faster execution** (No HTTP overhead)
+    **Result:**
+    - 🚀 **Hypersonic Speed** (Tests run in ms)
     - 🛡️ **Flakiness resistance** (It "knows" when the browser is busy)
     """)
-with col2:
-    # Centered and smaller image
-    c1, c2, c3 = st.columns([0.2, 2, 0.2])
-    with c2:
-        st.image("assets/playwright_architecture_1765634867859.png", caption="Playwright's Direct-Communication Architecture")
+with c2:
+    st.image("assets/playwright_architecture_1765634867859.png", caption="Playwright's Direct-Communication Architecture", use_column_width=True)
 
 
 tabs = st.tabs([
@@ -59,17 +58,18 @@ with tabs[0]:
         
     with comp_col2:
         st.markdown("#### ✅ The Playwright Way (User-Facing)")
-        st.markdown("""
-        Finding an element by Role or Text is like **giving directions based on the destination's purpose**.
-        
-        > *"Go to the Library."*
-        
-        **Why it works**: Even if the library is renovated, it's still the "Library".
-        """)
-        
-    c1, c2, c3 = st.columns([1, 3, 1])
-    with c2:
-        st.image("assets/locator_comparison_1765634890442.png", caption="Fragile vs. Resilient Locators")
+        c1, c2 = st.columns([1, 1])
+        with c1:
+            st.markdown("""
+            **The "Public Library" Analogy**
+            
+            *   **XPath/CSS**: Trying to find a book by counting "3rd shelf, 4th book". If the librarian moves the book, you fail.
+            *   **User-Facing Locators**: Asking for "The Harry Potter Book". 
+            
+            **Why it works**: Even if the library is renovated, it's still the "Library".
+            """)
+        with c2:
+            st.image("assets/locator_comparison_1765634890442.png", caption="Fragile vs. Resilient Locators", use_column_width=True)
 
     st.markdown("### 🏆 Best Practices Code Comparison")
     c1, c2 = st.columns(2)
@@ -99,16 +99,16 @@ page.get_by_label("User Email").fill("test@example.com")
 with tabs[1]:
     st.subheader("⏳ The 'Polite' Automation Engine")
     
-    st.markdown("""
-    **The "Polite Conversation" Analogy**
-    
-    *   **Selenium/Old Tools**: Like a person who shouts a question and immediately expects an answer, getting angry (Exception) if you haven't processed it yet.
-    *   **Playwright**: Like a polite conversation partner. It asks a question and **waits patiently** (Auto-Wait) for you to finish thinking (Loading) and look at them (Visibility) before expecting a response.
-    """)
-    
-    c1, c2, c3 = st.columns([1, 3, 1])
+    c1, c2 = st.columns([1, 1])
+    with c1:
+        st.markdown("""
+        **The "Polite Conversation" Analogy**
+        
+        *   **Selenium**: Like screaming at someone who isn't listening yet. You have to verify they are awake first.
+        *   **Playwright**: Like a polite conversation partner. It asks a question and **waits patiently** (Auto-Wait) for you to finish thinking (Loading) and look at them (Visibility) before expecting a response.
+        """)
     with c2:
-        st.image("assets/auto_wait_mechanism_1765634911762.png", caption="Playwright's Actionability Checks")
+        st.image("assets/auto_wait_mechanism_1765634911762.png", caption="Playwright's Actionability Checks", use_column_width=True)
     
     st.markdown("### 📝 What does it check?")
     st.info("Before performing a `click()`, Playwright ensures ALL these are true:")
